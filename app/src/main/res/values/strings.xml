@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">HR Open Dagen App</string>
+    <string-array name="Dagen">
+        <item>•	31 oktober of 1 november 2018</item>
+        <item>•	21 of 22 november 2018</item>
+        <item>•	18 of 19 december 2018</item>
+        <item>•	20 of 21 februari 2019</item>
+        <item>•	26 of 27 maart 2019</item>
+        <item>• 4 april 2019</item>
+        <item>• 4 juni 2019</item>
+    </string-array>
+    <string-array name="Info">
+        <item>Proefstuderen, Inschrijving gesloten</item>
+        <item>Proefstuderen, Inschrijving gesloten</item>
+        <item>Proefstuderen, Inschrijving gesloten</item>
+        <item>Proefstuderen, Inschrijving gesloten</item>
+        <item>Proefstuderen, Inschrijving open</item>
+        <item>Open Dag, inschrijving open</item>
+        <item>Open Dag, inschrijving open</item>
+    </string-array>
+    <string name="linktosite">
+        <a href="https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/informatica/voltijd/aanmeldprocedure-en-studiekeuzecheck/">Klik hier om je in te schrijven!</a>
+    </string>
+</resources>
