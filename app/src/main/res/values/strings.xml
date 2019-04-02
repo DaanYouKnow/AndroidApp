@@ -21,4 +21,6 @@
     <string name="linktosite">
         <a href="https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/informatica/voltijd/aanmeldprocedure-en-studiekeuzecheck/">Klik hier om je in te schrijven!</a>
     </string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
