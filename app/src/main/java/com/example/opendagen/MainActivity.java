@@ -71,7 +71,13 @@ public class MainActivity extends AppCompatActivity {
         buttonShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openShare ();
+                Intent myIntent = new Intent(Intent.ACTION_SEND);
+                myIntent.setType("text/plain");
+                String ShareSub = "Ik ga naar hogeschool Rotterdam!\n";
+                String ShareBody = "ik ga binnenkort naar opendag informatica bij HogeSchool Rotterdam! \nik heb er nu al zin in!";
+                myIntent.putExtra(Intent.EXTRA_SUBJECT,ShareSub);
+                myIntent.putExtra(Intent.EXTRA_TEXT,ShareBody);
+                startActivity(Intent.createChooser(myIntent, "Share your excitement!"));
             }
         });
     }
