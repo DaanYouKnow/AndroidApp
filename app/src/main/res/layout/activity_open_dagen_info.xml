@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,56 +7,51 @@
     tools:context=".ActivityOpenDagenInfo"
     android:background="#333333">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="237dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Wat kun je verwachten? Tijdens deze dag ga je, onder begeleiding van studenten uit jaar twee en een docent, kennismaken met onderwerpen die je tijdens de opleiding kunt verwachten. De twee kernvakken: Analyse en Development worden toegelicht en aan de hand van een aantal kleine oefeningen werk je aan één (of meerdere) praktische opdracht(en). Verder krijg je een beeld van het eerste jaar van de opleiding door de projecten van de studenten. "
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.017" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="2000dp">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="237dp"
-        android:layout_height="404dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Wat moet je meenemen? \nNeem pen en papier mee om aantekeningen te maken.\nConsumpties \nTijdens het proefstudeer programma krijg je een drankje aangeboden.  \nProgramma  \n08.30 – 09.00 Aanmelden in de centrale hal  \n09.00 – 09.30 Introductie/welkomstwoord bij de opleiding  \n09.30 – 10.00 Analyse theorie  \n10.00 – 10.45 Analyse praktijk  \n10.45 – 11.00 Pauze  \n11.00 – 11.30 Development theorie \n11.30 – 12.15 Development praktijk \n12.15 – 12.30 Afsluiting \n\nInschrijven:  Wil je je inschrijven voor deze opleiding? Leuk!! Van harte welkom bij de hogeschool volg deze link om je in te schrijven: https://student.sl-cloud.nl/ "
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.111" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Wat kun je verwachten? \nTijdens deze dag ga je, onder begeleiding van studenten uit jaar twee en een docent, kennismaken met onderwerpen die je tijdens de opleiding kunt verwachten. \nDe twee kernvakken: \nAnalyse en Development, worden toegelicht en aan de hand van een aantal kleine oefeningen, werk je aan één (of meerdere) praktische opdracht(en). \nVerder krijg je een beeld van het eerste jaar van de opleiding door de projecten van de studenten. "
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/textwebsite"
-        android:layout_width="237dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/linktosite"
-        android:textColor="#0000FF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="875dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Wat moet je meenemen? \nNeem pen en papier mee om aantekeningen te maken.\nConsumpties: \nTijdens het proefstudeer programma krijg je een drankje aangeboden.  \nProgramma:  \n\n08.30 – 09.00 Aanmelden in de centrale hal  \n\n09.00 – 09.30 Introductie/welkomstwoord bij de opleiding  \n\n09.30 – 10.00 Analyse theorie  \n\n10.00 – 10.45 Analyse praktijk  \n\n10.45 – 11.00 Pauze  \n\n11.00 – 11.30 Development theorie \n\n11.30 – 12.15 Development praktijk \n\n12.15 – 12.30 Afsluiting \n\nInschrijven:  \nWil je je inschrijven voor deze opleiding? Leuk!! Je bent van harte welkom bij de hogeschool!"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textwebsite"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/linktosite"
+            android:textSize="24sp"
+            android:textColor="#0000FF" />
+    </LinearLayout>
+</ScrollView>
