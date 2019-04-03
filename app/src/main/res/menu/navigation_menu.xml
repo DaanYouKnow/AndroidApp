@@ -2,27 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/home"
+        android:icon="@mipmap/baseline_home_black_24"
         android:title="Home" />
 
     <item android:id="@+id/profiel"
+        android:icon="@mipmap/baseline_account_circle_black_24"
         android:title="Profiel" />
 
     <item android:id="@+id/opendays"
+        android:icon="@mipmap/baseline_calendar_today_black_24"
         android:title="Open dagen" />
 
-    <item android:id="@+id/inschijvenz"
-        android:title="Inschrijven" />
 
     <item android:id="@+id/locatiez"
+        android:icon="@mipmap/baseline_gps_fixed_black_24"
         android:title="Locatie" />
 
-    <item android:id="@+id/kalender"
-        android:title="Agenda" />
-
     <item android:id="@+id/social"
+        android:icon="@mipmap/baseline_people_black_24"
         android:title="Social Media" />
 
     <item android:id="@+id/sharee"
+        android:icon="@mipmap/baseline_share_black_24"
         android:title="Share" />
 
     <item android:id="@+id/buttonLogin"
