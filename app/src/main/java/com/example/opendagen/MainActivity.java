@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         buttonLocatie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openLocatie ();
+                openLocatie();
             }
         });
         //knop om naar Social Media te gaan.
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void openLocatie() {
-        Intent intent4 = new Intent(this, Activity4.class);
+        Intent intent4 = new Intent(this, MapsActivity.class);
         startActivity(intent4);
     }
     public void openSocialMedia() {
