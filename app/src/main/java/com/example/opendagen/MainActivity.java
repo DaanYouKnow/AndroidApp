@@ -19,9 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonSocialMedia;
     private Button buttonShare;
     private DrawerLayout mDrawerLayout;
+    private Button buttonLogin;
     private ActionBarDrawerToggle mToggle;
-
-
 
 
     @Override
@@ -30,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //knop om naar Login te gaan.
+        buttonLogin = (Button) findViewById(R.id.buttonLogin);
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void  onClick(View view){
+                openLogin();
+            }
+        });
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -80,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(Intent.createChooser(myIntent, "Share your excitement!"));
             }
         });
+
     }
     public void openOpenDagen() {
         Intent intent1 = new Intent(this, Activity2.class);
@@ -102,6 +111,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent6 = new Intent(this, Activity7.class);
         startActivity(intent6);
     }
+    public void openLogin() {
+        Intent intent8 = new Intent(this, Activity8.class);
+        startActivity(intent8);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

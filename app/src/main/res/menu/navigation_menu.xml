@@ -24,4 +24,7 @@
 
     <item android:id="@+id/sharee"
         android:title="Share" />
+
+    <item android:id="@+id/buttonLogin"
+        android:title="Login" />
 </menu>
