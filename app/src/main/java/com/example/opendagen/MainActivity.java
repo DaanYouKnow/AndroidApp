@@ -1,6 +1,9 @@
 package com.example.opendagen;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +11,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.support.v4.widget.DrawerLayout;
 
 import com.example.opendagen.R;
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private Button buttonOpenDagen;
     private Button buttonInschrijven;
@@ -38,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
         mToggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nv1);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
+
+
+
 
 
 
@@ -111,4 +122,31 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case(R.id.opendays):
+                Intent intent1 = new Intent(getApplicationContext(),Activity2.class);
+                startActivity(intent1);
+                break;
+            case(R.id.social):
+                Intent intent5  = new Intent(getApplicationContext(),Activity6.class);
+                startActivity(intent5);
+                break;
+            case(R.id.locatiez):
+                Intent intent4  = new Intent(getApplicationContext(),MapsActivity.class);
+                startActivity(intent4);
+                break;
+            case(R.id.sharee):
+                Intent intent6  = new Intent(getApplicationContext(),Activity7.class);
+                startActivity(intent6);
+                break;
+        }
+        return true;
+
+
+    }
+
+
 }
