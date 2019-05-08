@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonSocialMedia;
     private Button buttonShare;
     private DrawerLayout mDrawerLayout;
-    private Button buttonLogin; //ik upload nu iets naar mijn Locale Branch
+    private Button buttonLogin; //yoloxdyotkeyoydsadhsadsahdJASPERISEENLUIAARD
     private ActionBarDrawerToggle mToggle;
 
 
