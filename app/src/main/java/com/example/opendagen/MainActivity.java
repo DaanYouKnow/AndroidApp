@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonSocialMedia;
     private Button buttonShare;
     private DrawerLayout mDrawerLayout;
-    private Button buttonLogin; //yolo
+    private Button buttonLogin; //yoloxd
     private ActionBarDrawerToggle mToggle;
 
 
