@@ -6,15 +6,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import com.example.opendagen.R;
 
 
-public class Activity6 extends AppCompatActivity {
+public class ActivityInfo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_6);
+        setContentView(R.layout.infoactivity);
 
         Button ButtonFacebook = (Button)findViewById(R.id.Facebook);
         ButtonFacebook.setOnClickListener(new View.OnClickListener() {

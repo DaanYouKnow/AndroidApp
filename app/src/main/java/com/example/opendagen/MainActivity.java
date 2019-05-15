@@ -1,9 +1,7 @@
 package com.example.opendagen;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.support.v4.widget.DrawerLayout;
 
-import com.example.opendagen.R;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private Button buttonOpenDagen;
@@ -34,15 +30,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //knop om naar Login te gaan.
-        buttonLogin = (Button) findViewById(R.id.buttonLogin);
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void  onClick(View view){
-                openLogin();
-            }
-        });
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -69,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 openOpenDagen();
             }
         });
-
         //knop om naar Locatie te gaan.
         buttonLocatie = (Button) findViewById(R.id.buttonLocatie);
         buttonLocatie.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
     public void openOpenDagen() {
-        Intent intent1 = new Intent(this, Activity2.class);
+        Intent intent1 = new Intent(this, ActivityOpenDagenLijst.class);
         startActivity(intent1);
     }
     public void OpenCalender(View view){
@@ -116,17 +102,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent4);
     }
     public void openSocialMedia() {
-        Intent intent5 = new Intent(this, Activity6.class);
+        Intent intent5 = new Intent(this, ActivityInfo.class);
         startActivity(intent5);
     }
     public void openShare() {
-        Intent intent6 = new Intent(this, Activity7.class);
+        Intent intent6 = new Intent(this, ActivityShare.class);
         startActivity(intent6);
     }
-    public void openLogin() {
-        Intent intent8 = new Intent(this, Activity8.class);
-        startActivity(intent8);
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -142,11 +125,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case(R.id.opendays):
-                Intent intent1 = new Intent(getApplicationContext(),Activity2.class);
+                Intent intent1 = new Intent(getApplicationContext(), ActivityOpenDagenLijst.class);
                 startActivity(intent1);
                 break;
             case(R.id.social):
-                Intent intent5  = new Intent(getApplicationContext(),Activity6.class);
+                Intent intent5  = new Intent(getApplicationContext(), ActivityInfo.class);
                 startActivity(intent5);
                 break;
             case(R.id.locatiez):
@@ -154,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent4);
                 break;
             case(R.id.sharee):
-                Intent intent6  = new Intent(getApplicationContext(),Activity7.class);
+                Intent intent6  = new Intent(getApplicationContext(), ActivityShare.class);
                 startActivity(intent6);
                 break;
         }

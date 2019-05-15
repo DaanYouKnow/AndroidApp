@@ -8,9 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.opendagen.R;
-
-public class Activity2 extends AppCompatActivity {
+public class ActivityOpenDagenLijst extends AppCompatActivity {
 
     ListView MyListView;
     String[] Dagen;
@@ -19,7 +17,7 @@ public class Activity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_2);
+        setContentView(R.layout.opendagenlijstactivity);
 
         Resources res = getResources();
         MyListView =(ListView) findViewById(R.id.MyListView);
