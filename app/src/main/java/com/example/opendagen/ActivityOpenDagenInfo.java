@@ -13,6 +13,6 @@ public class ActivityOpenDagenInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_dagen_info);
         TextView text = (TextView) findViewById(R.id.textwebsite);
-        text.setMovementMethod(LinkMovementMethod.getInstance());
+        text.setMovementMethod(LinkMovementMethod.getInstance()); //yolo
     }
 }
