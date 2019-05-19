@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         else setTheme(R.style.AppTheme);
 
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
         modeswitch=(Switch)findViewById(R.id.switch2);
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             modeswitch.setChecked(true);
@@ -47,19 +51,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    restartApp();
+                    recreate();
                 }
                 else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    restartApp();
+                    recreate();
                 }
             }
         });
-
-
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -117,11 +116,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-    }
-    public void restartApp() {
-        Intent i = new Intent(getApplicationContext(),MainActivity.class);
-        startActivity(i);
-        finish();
     }
 
     public void openOpenDagen() {
