@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#333333"
+    android:background="?attr/backgroundColor"
     tools:context=".ActivityShare">
 
     <Button
@@ -18,8 +18,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Share"
-        android:textColor="#FFFFFF"
-        android:background="#222222"
+        android:textColor="?attr/buttontextColor"
+        android:background="?attr/buttonColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

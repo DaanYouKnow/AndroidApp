@@ -1,11 +1,31 @@
 <resources>
 
     <!-- Base application theme. -->
+    <!-- Dark Mode -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#222222</item>
+        <item name="colorPrimaryDark">#111111</item>
+        <item name="colorAccent">#D81B60</item>
+        <item name="backgroundColor">#333333</item>
+        <item name="tintColor">#111111</item>
+        <item name="textColor">#FFFFFF</item>
+        <item name="buttonColor">#222222</item>
+        <item name="buttontextColor">#FFFFFF</item>
+    </style>
+
+
+    <!-- HRO Mode -->
+    <style name="HROTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#cc0133</item>
+        <item name="colorPrimaryDark">#ae012b</item>
+        <item name="colorAccent">#019661</item>
+        <item name="backgroundColor">#FFFFFF</item>
+        <item name="tintColor">#ae012b</item>
+        <item name="textColor">#000000</item>
+        <item name="buttonColor">#cc0133</item>
+        <item name="buttontextColor">#FFFFFF</item>
     </style>
 
 </resources>

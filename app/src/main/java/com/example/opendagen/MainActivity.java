@@ -6,9 +6,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -23,9 +26,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonLogin; //LOCALK FIONDIANDKJD
     private ActionBarDrawerToggle mToggle;
 
+    private Switch modeswitch;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Dark mode --> HRO mode knop
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.HROTheme);
+        }
+        else setTheme(R.style.AppTheme);
+
+        modeswitch=(Switch)findViewById(R.id.switch2);
+        if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
+            modeswitch.setChecked(true);
+        }
+        modeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    restartApp();
+                }
+                else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    restartApp();
+                }
+            }
+        });
+
 
 
         super.onCreate(savedInstanceState);
@@ -88,6 +118,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
     }
+    public void restartApp() {
+        Intent i = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(i);
+        finish();
+    }
+
     public void openOpenDagen() {
         Intent intent1 = new Intent(this, ActivityOpenDagenLijst.class);
         startActivity(intent1);
