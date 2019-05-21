@@ -42,8 +42,7 @@ public class ItemAdapter extends BaseAdapter {
         TextView NameTextView = (TextView) v.findViewById(R.id.NameTextView);
         TextView DescriptionTextView = (TextView) v.findViewById(R.id.DescriptionTextView);
         NameTextView.setTextColor(Color.WHITE);
-        DescriptionTextView.setTextColor(Color.WHITE);
-
+        DescriptionTextView.setTextColor(Color.argb(255,255,255,255));
         String Name = Dagen[i];
         String Desc = Info[i];
 
