@@ -15,6 +15,7 @@ public class ActivityOpenDagenLijst extends AppCompatActivity {
     String[] Dagen;
     String[] Info;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
@@ -37,7 +38,8 @@ public class ActivityOpenDagenLijst extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                 Intent ShowOpenDagendetail = new Intent(getApplicationContext(), ActivityOpenDagenInfo.class);
-                ShowOpenDagendetail.putExtra("com.example.myapplication.ITEM_INDEX", i);
+                ShowOpenDagendetail.putExtra("Datum", Dagen[i]);
+                ShowOpenDagendetail.putExtra("Info", Info[i]);
                 startActivity(ShowOpenDagendetail);
             }
         });
