@@ -20,7 +20,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#cc0133</item>
         <item name="colorPrimaryDark">#ae012b</item>
-        <item name="colorAccent">#019661</item>
+        <item name="colorAccent">#cc0133</item> <!--Vorige kleur: #019661 -->
         <item name="backgroundColor">#FFFFFF</item>
         <item name="tintColor">#ae012b</item>
         <item name="textColor">#000000</item>
