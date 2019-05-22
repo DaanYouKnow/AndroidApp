@@ -22,3 +22,4 @@ public class ActivityOpenDagenInfo extends AppCompatActivity {
         text.setMovementMethod(LinkMovementMethod.getInstance()); //yolo
     }
 }
+//fafa
