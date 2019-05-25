@@ -37,7 +37,7 @@
         <activity android:name=".ActivityInfo" />
         <activity android:name=".ActivityLocatie" />
         <activity android:name=".ActivityOpenDagenLijst" />
-        <activity android:name=".Activity8" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

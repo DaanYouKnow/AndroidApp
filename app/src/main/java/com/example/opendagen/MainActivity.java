@@ -10,8 +10,6 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -21,12 +19,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonAgenda;
     private Button buttonSocialMedia;
     private Button buttonShare;
+    private Button buttonSettings;
     private DrawerLayout mDrawerLayout;
 
     private Button buttonLogin; //LOCALK FIONDIANDKJD
     private ActionBarDrawerToggle mToggle;
-
-    private Switch modeswitch;
 
 
     @Override
@@ -41,26 +38,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Dark mode switch 2/2
-        modeswitch=(Switch)findViewById(R.id.switch2);
-        if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            modeswitch.setChecked(true);
-        }
-        modeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    recreate();
-                }
-                else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    recreate();
-                }
-            }
-        });
-        // einde dark mode switch 2/2
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -117,6 +94,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(Intent.createChooser(myIntent, "Share your excitement!"));
             }
         });
+        // knop om naar Settings te gaan.
+        buttonSettings = (Button) findViewById(R.id.buttonSettings);
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSettings();
+            }
+        });
 
     }
 
@@ -141,9 +126,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent6 = new Intent(this, ActivityShare.class);
         startActivity(intent6);
     }
+    public void openSettings() {
+        Intent intent7 = new Intent(this, SettingsActivity.class);
+        startActivity(intent7);
+    }
 
 
-    @Override
+        @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if(mToggle.onOptionsItemSelected(item)){
@@ -171,6 +160,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case(R.id.sharee):
                 Intent intent6  = new Intent(getApplicationContext(), ActivityShare.class);
                 startActivity(intent6);
+                break;
+            case(R.id.settings):
+                Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent7);
                 break;
         }
         return true;

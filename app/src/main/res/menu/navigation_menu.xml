@@ -26,6 +26,7 @@
         android:icon="@mipmap/baseline_share_black_24"
         android:title="Share" />
 
-    <item android:id="@+id/buttonLogin"
-        android:title="Login" />
+    <item android:id="@+id/settings"
+        android:icon="@mipmap/baseline_settings_black_24"
+        android:title="Settings" />
 </menu>

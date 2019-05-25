@@ -115,25 +115,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.233" />
+            app:layout_constraintVertical_bias="0.08" />
 
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="108dp"
-            android:layout_height="32dp"
+        <Button
+            android:id="@+id/buttonSettings"
+            android:layout_width="209dp"
+            android:layout_height="69dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:textColor="?attr/textColor"
-            android:text="theme"
+            android:background="?attr/buttonColor"
+            android:text="Settings"
+            android:textColor="?attr/buttontextColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.106" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonShare"
+            app:layout_constraintVertical_bias="0.019" />
 
     </android.support.constraint.ConstraintLayout>
 
