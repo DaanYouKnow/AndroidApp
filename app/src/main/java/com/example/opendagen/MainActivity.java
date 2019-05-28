@@ -32,16 +32,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //Dark mode --> HRO mode knop
+        //Dark mode --> HRO mode knop 1/2
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.HROTheme);
         }
         else setTheme(R.style.AppTheme);
-
+        // einde dark mode switch 1/2
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Dark mode switch 2/2
         modeswitch=(Switch)findViewById(R.id.switch2);
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             modeswitch.setChecked(true);
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
+        // einde dark mode switch 2/2
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
