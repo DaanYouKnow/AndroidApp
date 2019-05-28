@@ -14,6 +14,9 @@ public class ActivityOpenDagenInfo extends AppCompatActivity {
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.HROTheme);
         }
+        else if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM) {
+            setTheme(R.style.HROTheme);
+        }
         else setTheme(R.style.AppTheme);
 
         super.onCreate(savedInstanceState);

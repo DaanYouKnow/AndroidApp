@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.HROTheme);
         }
+        else if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM) {
+            setTheme(R.style.HROTheme);
+        }
         else setTheme(R.style.AppTheme);
         // einde dark mode switch 1/2
 
@@ -183,6 +186,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if (isChecked) {
                             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                            recreate();
+                        }
+                        else if (isChecked) {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
                             recreate();
                         }
                         else {

@@ -21,6 +21,9 @@ public class SettingsActivity extends AppCompatActivity {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.HROTheme);
         }
+        else if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM) {
+            setTheme(R.style.HROTheme);
+        }
         else setTheme(R.style.AppTheme);
         // einde dark mode switch 1/2
 
@@ -32,11 +35,18 @@ public class SettingsActivity extends AppCompatActivity {
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             modeswitch.setChecked(true);
         }
+        else if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM) {
+            modeswitch.setChecked(true);
+        }
         modeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    recreate();
+                }
+                else if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
                     recreate();
                 }
                 else {
