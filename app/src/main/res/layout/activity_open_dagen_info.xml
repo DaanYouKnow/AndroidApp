@@ -102,6 +102,20 @@
             android:text="Share!"
             android:textColor="#0000FF"
             android:textSize="14sp" />
+        <Button
+            android:id="@+id/buttonAgenda"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:text="Agenda"
+            android:textColor="#0000FF"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/buttonLocatie"
