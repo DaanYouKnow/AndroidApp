@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -21,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonShare;
     private Button buttonSettings;
     private DrawerLayout mDrawerLayout;
+    private Switch modeswitch;
+
 
     private Button buttonLogin; //LOCALK FIONDIANDKJD
     private ActionBarDrawerToggle mToggle;
@@ -38,6 +42,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -165,8 +173,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent7);
                 break;
+            case(R.id.switch2):
+                modeswitch=(Switch)findViewById(R.id.switch2);
+                if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
+                    modeswitch.setChecked(true);
+                }
+                modeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        if (isChecked) {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                            recreate();
+                        }
+                        else {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                            recreate();
+                        }
+                    }
+                });
+
+
+
         }
         return true;
+
+
 
 
     }

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/drawer_switch"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:text=""/>
 
     <item android:id="@+id/home"
         android:icon="@mipmap/baseline_home_black_24"
@@ -29,4 +36,11 @@
     <item android:id="@+id/settings"
         android:icon="@mipmap/baseline_settings_black_24"
         android:title="Settings" />
+
+    <item
+        android:id="@+id/switch2"
+        android:title="Dark Mode"
+        app:actionLayout="@layout/layout_switch"
+        />
+
 </menu>
