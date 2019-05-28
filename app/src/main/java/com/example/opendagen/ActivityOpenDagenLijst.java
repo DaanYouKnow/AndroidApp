@@ -1,5 +1,5 @@
 package com.example.opendagen;
-
+//
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
