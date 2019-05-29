@@ -17,7 +17,6 @@ public class ActivityOpenDagenInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Calendar calender = Calendar.getInstance();
         calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
-        //Dark mode --> HRO mode knop 1/2
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.HROTheme);
         }

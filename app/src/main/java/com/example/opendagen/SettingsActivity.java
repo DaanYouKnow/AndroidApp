@@ -23,7 +23,6 @@ public class SettingsActivity extends AppCompatActivity {
         //Dark mode --> HRO mode knop 1/2
         Calendar calender = Calendar.getInstance();
         calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
-        //Dark mode --> HRO mode knop 1/2
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.HROTheme);
         }

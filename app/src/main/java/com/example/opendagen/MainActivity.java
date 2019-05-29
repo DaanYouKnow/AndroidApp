@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         Calendar calender = Calendar.getInstance();
         calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
-        //Dark mode --> HRO mode knop 1/2
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.HROTheme);
         }
@@ -49,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else {
             setTheme(R.style.AppTheme);
         }
-        // einde dark mode switch 1/2
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -184,31 +182,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent7);
                 break;
-            case(R.id.switch2):
-                modeswitch=(Switch)findViewById(R.id.switch2);
-                if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-                    modeswitch.setChecked(true);
-                }
-                modeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        if (isChecked) {
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                            recreate();
-                        }
-                        else if (isChecked) {
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                            recreate();
-                        }
-                        else {
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                            recreate();
-                        }
-                    }
-                });
-
-
-
         }
         return true;
 
