@@ -15,145 +15,96 @@
 
 
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        android:background="?attr/backgroundColor">
+        android:orientation="vertical"
 
+        android:background="?attr/backgroundColor">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="20pt"
+            android:layout_marginTop="10pt">
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:layout_marginBottom="10pt"
+                app:srcCompat="@drawable/hrlogo" />
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="50pt"
+            android:layout_weight="5"
+            android:text="theme"
+            android:textColor="?attr/textColor"
+
+            />
+        <Switch
+            android:id="@+id/TestSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="50pt"
+            android:layout_weight="5"
+            android:text="Permanent Daymode"
+            android:textColor="?attr/textColor"
+            />
         <Button
-            android:id="@+id/buttonShare"
-            android:layout_width="209dp"
-            android:layout_height="69dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:id="@+id/buttonOpenDagen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="50pt"
+            android:layout_weight="5"
             android:background="?attr/buttonColor"
-            android:text="Share"
-            android:textColor="?attr/buttontextColor"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSocialMedia"
-            app:layout_constraintVertical_bias="0.019" />
+            android:text="Open Dagen"
+            android:layout_marginBottom="10pt"
+
+            android:textColor="?attr/buttontextColor" />
 
         <Button
             android:id="@+id/buttonLocatie"
-            android:layout_width="209dp"
-            android:layout_height="69dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="50pt"
+            android:layout_weight="5"
             android:background="?attr/buttonColor"
             android:text="Locatie"
             android:textColor="?attr/buttontextColor"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonOpenDagen"
-            app:layout_constraintVertical_bias="0.019" />
+            android:layout_marginBottom="10pt"
+
+            />
 
         <Button
-            android:id="@+id/buttonAgenda"
-            android:layout_width="209dp"
-            android:layout_height="69dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:id="@+id/buttonShare"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="50pt"
+            android:layout_weight="5"
             android:background="?attr/buttonColor"
-            android:text="Agenda"
+            android:text="Share"
             android:textColor="?attr/buttontextColor"
-            android:onClick="OpenCalender"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonLocatie"
-            app:layout_constraintVertical_bias="0.019" />
+            android:layout_marginBottom="10pt"
+
+            />
 
         <Button
             android:id="@+id/buttonSocialMedia"
-            android:layout_width="209dp"
-            android:layout_height="69dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="50pt"
+            android:layout_weight="5"
             android:background="?attr/buttonColor"
-            android:text="Social Media"
+            android:text="Info"
             android:textColor="?attr/buttontextColor"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonAgenda"
-            app:layout_constraintVertical_bias="0.019" />
-
-        <Button
-            android:id="@+id/buttonOpenDagen"
-            android:layout_width="209dp"
-            android:layout_height="69dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="?attr/buttonColor"
-            android:text="Open Dagen"
-            android:textColor="?attr/buttontextColor"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.233" />
-
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="108dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:textColor="?attr/textColor"
-            android:text="theme"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.106" />
-
-        <Switch
-            android:id="@+id/TestSwitch"
-            android:layout_width="108dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="TestSwitch"
-            android:textColor="?attr/textColor"
-            app:layout_constraintBottom_toTopOf="@+id/switch2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-    </android.support.constraint.ConstraintLayout>
+            android:layout_marginBottom="10pt"
+            />
+        </LinearLayout>
+    </LinearLayout>
 
 
 

@@ -22,10 +22,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonSocialMedia;
     private Button buttonShare;
     private DrawerLayout mDrawerLayout;
-
-    private Button buttonLogin; //LOCALK FIONDIANDKJD
     private ActionBarDrawerToggle mToggle;
-
     private Switch modeswitch;
     private Switch TESTSWITCH;
     public Boolean yeehaw = false;
@@ -157,10 +154,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent5 = new Intent(this, ActivityInfo.class);
         startActivity(intent5);
     }
-    public void openShare() {
-        Intent intent6 = new Intent(this, ActivityShare.class);
-        startActivity(intent6);
-    }
+
 
 
     @Override
@@ -176,27 +170,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case(R.id.opendays):
+            case (R.id.opendays):
                 Intent intent1 = new Intent(getApplicationContext(), ActivityOpenDagenLijst.class);
                 startActivity(intent1);
                 break;
-            case(R.id.social):
-                Intent intent5  = new Intent(getApplicationContext(), ActivityInfo.class);
+            case (R.id.social):
+                Intent intent5 = new Intent(getApplicationContext(), ActivityInfo.class);
                 startActivity(intent5);
                 break;
-            case(R.id.locatiez):
-                Intent intent4  = new Intent(getApplicationContext(),MapsActivity.class);
+            case (R.id.locatiez):
+                Intent intent4 = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(intent4);
                 break;
-            case(R.id.sharee):
-                Intent intent6  = new Intent(getApplicationContext(), ActivityShare.class);
-                startActivity(intent6);
+            case (R.id.sharee):
+                Intent myIntent = new Intent(Intent.ACTION_SEND);
+                myIntent.setType("text/plain");
+                String ShareSub = "Ik ga naar hogeschool Rotterdam!\n";
+                String ShareBody = "ik ga binnenkort naar opendag informatica bij HogeSchool Rotterdam! \nik heb er nu al zin in!";
+                myIntent.putExtra(Intent.EXTRA_SUBJECT, ShareSub);
+                myIntent.putExtra(Intent.EXTRA_TEXT, ShareBody);
+                startActivity(Intent.createChooser(myIntent, "Share your excitement!"));
                 break;
+            case (R.id.home):
+                Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent2);
+                break;
+
+
+
         }
         return true;
-
-
     }
+
+
 
 
 }
