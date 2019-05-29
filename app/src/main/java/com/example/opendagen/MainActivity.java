@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle mToggle;
 
     private Switch modeswitch;
+    private Switch TESTSWITCH;
+    public Boolean yeehaw = false;
 
 
     @Override
@@ -43,23 +45,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         // Dark mode switch 2/2
-        modeswitch=(Switch)findViewById(R.id.switch2);
+        TESTSWITCH=findViewById(R.id.TestSwitch);
+        TESTSWITCH.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    yeehaw = true;
+                    modeswitch.setChecked(false);
+                }
+            }
+        });
+        modeswitch=findViewById(R.id.switch2);
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             modeswitch.setChecked(true);
         }
         modeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+                if(yeehaw){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     recreate();
                 }
-                else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                else
+                    if(isChecked){
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     recreate();
+                    }
+
+                    else {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        recreate();
+                    }
                 }
-            }
+
         });
+
         // einde dark mode switch 2/2
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
