@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.Calendar;
+import java.util.TimeZone;
+
 public class ActivityOpenDagenLijst extends AppCompatActivity {
 
     ListView MyListView;
@@ -17,13 +20,18 @@ public class ActivityOpenDagenLijst extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Calendar calender = Calendar.getInstance();
+        calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
+        //Dark mode --> HRO mode knop 1/2
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.HROTheme);
         }
-        else if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM) {
+        else if (calender.get(calender.HOUR_OF_DAY) > 18 || calender.get(calender.HOUR_OF_DAY) < 6/*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
             setTheme(R.style.HROTheme);
         }
-        else setTheme(R.style.AppTheme);
+        else {
+            setTheme(R.style.AppTheme);
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.opendagenlijstactivity);

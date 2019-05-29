@@ -9,6 +9,9 @@ import android.widget.Switch;
 import android.widget.Button;
 import android.content.Intent;
 
+import java.util.Calendar;
+import java.util.TimeZone;
+
 public class SettingsActivity extends AppCompatActivity {
 
     private Switch modeswitch;
@@ -18,13 +21,18 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         //Dark mode --> HRO mode knop 1/2
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+        Calendar calender = Calendar.getInstance();
+        calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
+        //Dark mode --> HRO mode knop 1/2
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.HROTheme);
         }
-        else if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM) {
+        else if (calender.get(calender.HOUR_OF_DAY) > 18 || calender.get(calender.HOUR_OF_DAY) < 6/*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
             setTheme(R.style.HROTheme);
         }
-        else setTheme(R.style.AppTheme);
+        else {
+            setTheme(R.style.AppTheme);
+        }
         // einde dark mode switch 1/2
 
         super.onCreate(savedInstanceState);
@@ -35,23 +43,17 @@ public class SettingsActivity extends AppCompatActivity {
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             modeswitch.setChecked(true);
         }
-        else if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM) {
-            modeswitch.setChecked(true);
-        }
+
         modeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    recreate();
-                }
-                else if (isChecked) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                    recreate();
+                    //recreate();
                 }
                 else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    recreate();
+                    //recreate();
                 }
             }
         });
