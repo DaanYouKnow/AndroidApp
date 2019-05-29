@@ -22,10 +22,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonSocialMedia;
     private Button buttonShare;
     private DrawerLayout mDrawerLayout;
-
-    private Button buttonLogin; //LOCALK FIONDIANDKJD
     private ActionBarDrawerToggle mToggle;
-
     private Switch modeswitch;
 
 
@@ -178,10 +175,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent2);
                 break;
-            case (R.id.switch2):
-                Intent intent3 = new Intent(getApplicationContext(), SwitchInDrawer.class);
-                startActivity(intent3);
-                break;
+
 
 
         }

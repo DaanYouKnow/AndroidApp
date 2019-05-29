@@ -23,10 +23,10 @@
     <item android:id="@+id/sharee"
         android:icon="@mipmap/baseline_share_black_24"
         android:title="Share" />
-    <item
-        android:id="@+id/switch2"
-        android:title="Theme"
-        app:actionLayout="@layout/switch_item" />
+
+    <item android:id="@+id/Darkmode"
+        android:icon="@mipmap/baseline_brightness_6_black_24dp"
+        android:title="Theme" />
 
 
 </menu>
