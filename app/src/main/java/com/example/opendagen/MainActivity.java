@@ -1,6 +1,8 @@
 package com.example.opendagen;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonSettings;
     private DrawerLayout mDrawerLayout;
     private Switch modeswitch;
+    private int min;
+    private int max;
 
 
     private Button buttonLogin; //LOCALK FIONDIANDKJD
@@ -37,16 +41,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sp = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE);
+        min = sp.getInt("MIN", 18);
+        max = sp.getInt("MAX", 6);
+
         Calendar calender = Calendar.getInstance();
         calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.HROTheme);
-        }
-        else if (calender.get(calender.HOUR_OF_DAY) > 18 || calender.get(calender.HOUR_OF_DAY) < 6/*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
-            setTheme(R.style.HROTheme);
+
+        if(min == 0 || max == 0) {
+            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+                setTheme(R.style.HROTheme);
+            } else {
+                setTheme(R.style.AppTheme);
+            }
         }
         else {
-            setTheme(R.style.AppTheme);
+            if (calender.get(calender.HOUR_OF_DAY) > min || calender.get(calender.HOUR_OF_DAY) < max /*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
+                setTheme(R.style.HROTheme);
+            } else {
+                setTheme(R.style.AppTheme);
+            }
         }
 
         super.onCreate(savedInstanceState);

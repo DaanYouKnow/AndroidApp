@@ -25,7 +25,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.115" />
 
     <Button
         android:id="@+id/homebutton"
@@ -44,40 +44,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.628" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="205dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32">
-
-        <RadioButton
-            android:id="@+id/darkmode_handmatig"
-            android:layout_width="match_parent"
-            android:layout_height="87dp"
-            android:layout_weight="1"
-            android:text="Handmatige Dark Mode" />
-
-        <RadioButton
-            android:id="@+id/darkmode_automatisch"
-            android:layout_width="match_parent"
-            android:layout_height="87dp"
-            android:layout_weight="1"
-            android:text="Automatische Dark Mode" />
-    </RadioGroup>
+        app:layout_constraintVertical_bias="0.873" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="329dp"
         android:layout_height="62dp"
         android:layout_marginStart="8dp"
@@ -87,25 +57,155 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/homebutton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.431">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/min_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="?attr/textColor"
+            tools:text="18" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/max_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="?attr/textColor"
+            tools:text="6" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="303dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.537">
+
+        <TextView
+            android:id="@+id/min_out1"
+            android:layout_width="141dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:textColor="?attr/textColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/max_out1"
+            android:layout_width="141dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:textColor="?attr/textColor"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="336dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.694">
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="155dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="8dp"
+            android:background="?attr/buttonColor"
+            android:text="Opslaan"
+            android:textColor="?attr/buttontextColor" />
+
+        <Button
+            android:id="@+id/apply_button"
+            android:layout_width="155dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="?attr/buttonColor"
+            android:text="Huidige waarden"
+            android:textColor="?attr/buttontextColor" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="337dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="?attr/textColor"
+        android:text="Auto Dark Mode uit: [0] - [0]"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.243" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="337dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="?attr/textColor"
+        android:text="Auto Dark Mode aan: [van uur] - [tot uur]"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.317" />
+
 </android.support.constraint.ConstraintLayout>

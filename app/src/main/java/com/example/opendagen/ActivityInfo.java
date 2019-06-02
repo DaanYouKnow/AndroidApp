@@ -1,6 +1,8 @@
 package com.example.opendagen;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,18 +16,31 @@ import java.util.TimeZone;
 
 public class ActivityInfo extends AppCompatActivity {
 
+    private int min;
+    private int max;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sp = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE);
+        min = sp.getInt("MIN", 18);
+        max = sp.getInt("MAX", 6);
+
         Calendar calender = Calendar.getInstance();
         calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.HROTheme);
-        }
-        else if (calender.get(calender.HOUR_OF_DAY) > 18 || calender.get(calender.HOUR_OF_DAY) < 6/*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
-            setTheme(R.style.HROTheme);
+
+        if(min == 0 || max == 0) {
+            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+                setTheme(R.style.HROTheme);
+            } else {
+                setTheme(R.style.AppTheme);
+            }
         }
         else {
-            setTheme(R.style.AppTheme);
+            if (calender.get(calender.HOUR_OF_DAY) > min || calender.get(calender.HOUR_OF_DAY) < max /*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
+                setTheme(R.style.HROTheme);
+            } else {
+                setTheme(R.style.AppTheme);
+            }
         }
 
         super.onCreate(savedInstanceState);
