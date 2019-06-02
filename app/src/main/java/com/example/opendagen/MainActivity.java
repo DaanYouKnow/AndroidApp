@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import java.util.Calendar;
@@ -26,11 +25,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonAgenda;
     private Button buttonSocialMedia;
     private Button buttonShare;
+    private Button buttonSettings;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    private Switch modeswitch;
-    private Switch TESTSWITCH;
-    public Boolean yeehaw = false;
 
     private int min;
     private int max;
@@ -63,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
@@ -73,8 +69,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nv1);
         navigationView.setNavigationItemSelectedListener(this);
-
-
 
         //knop om naar Open Dagen te gaan.
         buttonOpenDagen = (Button) findViewById(R.id.buttonOpenDagen);
@@ -114,7 +108,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(Intent.createChooser(myIntent, "Share your excitement!"));
             }
         });
-
+        //knop om naar Settings te gaan.
+        buttonSettings = (Button) findViewById(R.id.buttonSettings);
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSettings();
+            }
+        });
     }
 
     public void openOpenDagen() {
@@ -134,7 +135,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent5 = new Intent(this, ActivityInfo.class);
         startActivity(intent5);
     }
-
+    public void openSettings() {
+        Intent intent7  = new Intent(this, SettingsActivity.class);
+        startActivity(intent7);
+    }
 
 
     @Override
