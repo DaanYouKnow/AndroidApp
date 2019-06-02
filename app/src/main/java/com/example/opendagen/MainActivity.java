@@ -15,9 +15,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-import java.sql.Time;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -28,15 +26,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonAgenda;
     private Button buttonSocialMedia;
     private Button buttonShare;
-    private Button buttonSettings;
     private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
     private Switch modeswitch;
+    private Switch TESTSWITCH;
+    public Boolean yeehaw = false;
+
     private int min;
     private int max;
-
-
-    private Button buttonLogin; //LOCALK FIONDIANDKJD
-    private ActionBarDrawerToggle mToggle;
 
 
     @Override
@@ -67,9 +64,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
 
-
-
-
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
@@ -79,11 +73,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nv1);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
-
-
 
 
 
@@ -125,14 +114,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(Intent.createChooser(myIntent, "Share your excitement!"));
             }
         });
-        // knop om naar Settings te gaan.
-        buttonSettings = (Button) findViewById(R.id.buttonSettings);
-        buttonSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSettings();
-            }
-        });
 
     }
 
@@ -153,17 +134,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent5 = new Intent(this, ActivityInfo.class);
         startActivity(intent5);
     }
-    public void openShare() {
-        Intent intent6 = new Intent(this, ActivityShare.class);
-        startActivity(intent6);
-    }
-    public void openSettings() {
-        Intent intent7 = new Intent(this, SettingsActivity.class);
-        startActivity(intent7);
-    }
 
 
-        @Override
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if(mToggle.onOptionsItemSelected(item)){
@@ -205,13 +179,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent7);
                 break;
+
         }
         return true;
-
-
-
-
     }
+
+
 
 
 }
