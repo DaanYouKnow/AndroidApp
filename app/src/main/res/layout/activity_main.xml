@@ -34,67 +34,66 @@
                 android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:layout_marginBottom="10pt"
-                app:srcCompat="@drawable/hr_logo_cmyk_wit_a4" />
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="50pt"
-            android:layout_weight="5"
-            android:text="theme"
-            android:textColor="?attr/textColor"
+                app:srcCompat="@drawable/hrlogo" />
 
-            />
+            <Button
+                android:id="@+id/buttonOpenDagen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="50pt"
+                android:layout_weight="5"
+                android:background="?attr/buttonColor"
+                android:text="Open Dagen"
+                android:layout_marginBottom="10pt"
+                android:textColor="?attr/buttontextColor" />
 
-        <Button
-            android:id="@+id/buttonOpenDagen"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="50pt"
-            android:layout_weight="5"
-            android:background="?attr/buttonColor"
-            android:text="Open Dagen"
-            android:layout_marginBottom="10pt"
+            <Button
+                android:id="@+id/buttonLocatie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="50pt"
+                android:layout_weight="5"
+                android:background="?attr/buttonColor"
+                android:text="Locatie"
+                android:textColor="?attr/buttontextColor"
+                android:layout_marginBottom="10pt"
+                />
 
-            android:textColor="?attr/buttontextColor" />
+            <Button
+                android:id="@+id/buttonShare"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="50pt"
+                android:layout_weight="5"
+                android:background="?attr/buttonColor"
+                android:text="Share"
+                android:textColor="?attr/buttontextColor"
+                android:layout_marginBottom="10pt"
+                />
 
-        <Button
-            android:id="@+id/buttonLocatie"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="50pt"
-            android:layout_weight="5"
-            android:background="?attr/buttonColor"
-            android:text="Locatie"
-            android:textColor="?attr/buttontextColor"
-            android:layout_marginBottom="10pt"
+            <Button
+                android:id="@+id/buttonSocialMedia"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="50pt"
+                android:layout_weight="5"
+                android:background="?attr/buttonColor"
+                android:text="Info"
+                android:textColor="?attr/buttontextColor"
+                android:layout_marginBottom="10pt"
+                />
 
-            />
-
-        <Button
-            android:id="@+id/buttonShare"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="50pt"
-            android:layout_weight="5"
-            android:background="?attr/buttonColor"
-            android:text="Share"
-            android:textColor="?attr/buttontextColor"
-            android:layout_marginBottom="10pt"
-
-            />
-
-        <Button
-            android:id="@+id/buttonSocialMedia"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="50pt"
-            android:layout_weight="5"
-            android:background="?attr/buttonColor"
-            android:text="Social Media"
-            android:textColor="?attr/buttontextColor"
-            android:layout_marginBottom="10pt"
-            />
+            <Button
+                android:id="@+id/buttonSettings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="50pt"
+                android:layout_weight="5"
+                android:background="?attr/buttonColor"
+                android:text="Settings"
+                android:textColor="?attr/buttontextColor"
+                android:layout_marginBottom="10pt"
+                />
         </LinearLayout>
     </LinearLayout>
 
@@ -111,4 +110,3 @@
     </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>
-

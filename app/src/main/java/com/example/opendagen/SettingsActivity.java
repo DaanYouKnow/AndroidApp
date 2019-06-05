@@ -1,7 +1,6 @@
 package com.example.opendagen;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -11,33 +10,42 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.Button;
+import android.content.Intent;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class SettingsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private Button buttonOpenDagen;
-    private Button buttonInschrijven;
-    private Button buttonLocatie;
-    private Button buttonAgenda;
-    private Button buttonSocialMedia;
-    private Button buttonShare;
-    private Button buttonSettings;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-
+    private Switch modeswitch;
+    private Button homebutton;
+    private Button apply_button;
+    private Button save_button;
+    private EditText min_input;
+    private EditText max_input;
+    private TextView min_out1;
+    private TextView max_out1;
     private int min;
     private int max;
+
+    public static final String USER_PREF = "USER_PREF";
+    public static final Integer MIN = 18;
+    public static final Integer MAX = 6;
+    SharedPreferences sp;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences sp = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE);
-        min = sp.getInt("MIN", 18);
-        max = sp.getInt("MAX", 6);
+        min = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE).getInt("MIN", 18);
+        max = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE).getInt("MAX", 6);
 
         Calendar calender = Calendar.getInstance();
         calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
@@ -58,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_settings);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -70,52 +78,87 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nv1);
         navigationView.setNavigationItemSelectedListener(this);
 
+        modeswitch=(Switch)findViewById(R.id.switch2);
+        if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
+            modeswitch.setChecked(true);
+        }
+
+        modeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    recreate();
+                }
+                else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    recreate();
+                }
+            }
+        });
+
+        min_out1 = (TextView) findViewById(R.id.min_out1);
+        max_out1 = (TextView) findViewById(R.id.max_out1);
+
+        min_input = (EditText) findViewById(R.id.min_input);
+        max_input = (EditText) findViewById(R.id.max_input);
+
+        sp = getSharedPreferences(USER_PREF,Context.MODE_PRIVATE);
+
+        apply_button = (Button) findViewById(R.id.apply_button);
+        save_button = (Button) findViewById(R.id.save_button);
+
+        apply_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                apply();
+            }
+        });
+
+        save_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveData();
+            }
+        });
+
         //knop om naar Open Dagen te gaan.
-        buttonOpenDagen = (Button) findViewById(R.id.buttonOpenDagen);
-        buttonOpenDagen.setOnClickListener(new View.OnClickListener() {
+        homebutton = (Button) findViewById(R.id.homebutton);
+        homebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openOpenDagen();
+                openMain();
             }
         });
-        //knop om naar Locatie te gaan.
-        buttonLocatie = (Button) findViewById(R.id.buttonLocatie);
-        buttonLocatie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLocatie();
-            }
-        });
-        //knop om naar Social Media te gaan.
-        buttonSocialMedia = (Button) findViewById(R.id.buttonSocialMedia);
-        buttonSocialMedia.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSocialMedia ();
-            }
-        });
-        //knop om naar Share te gaan.
-        buttonShare = (Button) findViewById(R.id.buttonShare);
-        buttonShare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(Intent.ACTION_SEND);
-                myIntent.setType("text/plain");
-                String ShareSub = "Ik ga naar hogeschool Rotterdam!\n";
-                String ShareBody = "ik ga binnenkort naar opendag informatica bij HogeSchool Rotterdam! \nik heb er nu al zin in!";
-                myIntent.putExtra(Intent.EXTRA_SUBJECT,ShareSub);
-                myIntent.putExtra(Intent.EXTRA_TEXT,ShareBody);
-                startActivity(Intent.createChooser(myIntent, "Share your excitement!"));
-            }
-        });
-        //knop om naar Settings te gaan.
-        buttonSettings = (Button) findViewById(R.id.buttonSettings);
-        buttonSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSettings();
-            }
-        });
+    }
+
+    public void saveData() {
+        int min_output = Integer.valueOf(min_input.getText().toString());
+        int max_output = Integer.valueOf(max_input.getText().toString());
+
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putInt("MIN", min_output);
+        editor.putInt("MAX", max_output);
+        editor.apply();
+
+        recreate();
+
+        Toast.makeText(this, "Opgeslagen", Toast.LENGTH_SHORT).show();
+    }
+
+    public void apply() {
+        StringBuilder str = new StringBuilder();
+        if (sp.contains("MIN")) {
+            min_out1.setText(String.valueOf(sp.getInt("MIN", 0)));
+        }
+        if (sp.contains("MAX")) {
+            max_out1.setText(String.valueOf(sp.getInt("MAX", 0)));
+        }
+    }
+
+    public void openMain() {
+        Intent intent1 = new Intent(this, MainActivity.class);
+        startActivity(intent1);
     }
 
     public void openOpenDagen() {
@@ -187,8 +230,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return true;
     }
-
-
-
-
 }
