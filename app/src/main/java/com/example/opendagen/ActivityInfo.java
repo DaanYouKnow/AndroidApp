@@ -137,10 +137,6 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
                 Intent intent1 = new Intent(getApplicationContext(), ActivityOpenDagenLijst.class);
                 startActivity(intent1);
                 break;
-            case (R.id.social):
-                Intent intent5 = new Intent(getApplicationContext(), ActivityInfo.class);
-                startActivity(intent5);
-                break;
             case (R.id.locatiez):
                 Intent intent4 = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(intent4);
@@ -162,6 +158,7 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
                 Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent7);
                 break;
+
         }
         return true;
     }
