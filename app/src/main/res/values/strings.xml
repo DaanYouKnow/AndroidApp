@@ -24,4 +24,57 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="title_activity_maps">Map</string>
+    <string name="kankertext">
+Wat kun je verwachten?\nTijdens deze dag ga je, onder begeleiding van studenten uit jaar twee en een docent,\nkennismaken met onderwerpen die je tijdens de opleiding kunt verwachten.\nDe twee kernvakken:\nAnalyse en Development, worden toegelicht en aan de hand van een aantal kleine oefeningen, werk je aan één (of meerdere) praktische opdracht(en).\nVerder krijg je een beeld van het eerste jaar van de opleiding door de projecten van de studenten.\n
+
+Wat moet je meenemen?\nNeem pen en papier mee om aantekeningen te maken.\nConsumpties:\nTijdens het proefstudeer programma krijg je een drankje aangeboden.\nProgramma:\n\n08.30 – 09.00 Aanmelden in de centrale hal\n\n09.00 – 09.30 Introductie/welkomstwoord bij de opleiding\n\n09.30 – 10.00 Analyse theorie  \n\n10.00 – 10.45 Analyse praktijk  \n\n10.45 – 11.00 Pauze  \n\n11.00 – 11.30 Development theorie \n\n11.30 – 12.15 Development praktijk \n\n12.15 – 12.30 Afsluiting \n\nInschrijven:  \nWil je je inschrijven voor deze opleiding? Leuk!! Je bent van harte welkom bij de hogeschool!</string>
+    <string name="InfoText">
+        De verschillende typen en vormen onderwijs op de hogeschool Rotterdam\n\n
+
+Onderwijstypes\n
+•	Associate degree\n
+•	Bachelor\n
+•	Master\n
+•	Post hbo trainingen en cursussen\n\n
+
+
+Onderwijsvormen\n
+Bij voltijd ga je de gehele werkweek naar school.\nDeeltijd studeren doe je meestal naast je werk.\nDuaal staat ook wel bekend als werken en leren.\n
+•	Voltijd\n
+•	Deeltijd\n
+•	Duaal\n\n
+
+Locatie en route\n
+Adress van de Ict-campus:\n\n
+
+Wijnhaven 1073011 WN Rotterdam\n\n
+
+Hoe kom je hier met het openbaar vervoer?\n
+Neem vanaf Rotterdam Centraal Station metrolijn D richting De Akkers of E richting Slinge.\nStap uit bij metrostation Beurs en loop 400 meter richting de Kamer van Koophandel,\nlangs het water richting het zuiden.\n\n
+
+Je kan ook de officiële website van de locatie gebruiken en uw postcode invoeren om de beste en snelste route te vinden.\n\n
+
+Hoe kom je hier met de auto?\n
+Locatie Wijnhaven 107 ligt in het centrum.\nRij vanuit het zuiden over de Erasmusburg of uit het noorden via de Coolsingel richting de kubuswoningen.\nSla daarvoor rechts af op de Posthoornstraat en vervolgens de 2e rechts naar de Wijnhaven.\n
+!!!!Let op!!!\n
+Maastunnel (deels) afgesloten\n
+Van 3 juli 2017 tot en met eind september 2019 zijn er werkzaamheden in de Maastunnel.\nHierdoor is er maar één tunnelbuis beschikbaar voor het verkeer van zuid naar noord (richting Erasmus MC).\nDe Maastunnel is in deze periode afgesloten van noord naar zuid (richting A15).\nHierdoor kan er vertraging ontstaan als u met de auto gaat,\ndus plan uw reistijd goed om er voor het begin van de activiteiten te zijn.\n\n
+
+Contact informatie\n
+Heb je een vraag voor Hogeschool Rotterdam? Neem dan contact met ons op.\n
+Kies hieronder over welk onderwerp je vraag gaat.\nIn het desbetreffende onderwerp vind u de contact mogelijkheden.\n
+-Mijn studiekeuze\n(https://bit.ly/2ti9ldW)\n
+-Aanmelding en financiën\nhttps://bit.ly/2vQIa74)\n
+- Toelating tot een opleiding\n(https://bit.ly/2En31FA)\n
+-Samenwerken met het onderwijs\n(https://bit.ly/2wf8HwR)\n
+-Onderzoek\n(https://bit.ly/30DQveD)\n
+-Werken bij Hogeschool Rotterdam\n(https://bit.ly/30zNaNv)\n
+-De website\n(https://bit.ly/30CZwnV)\n
+-Persvoorlichter\n(https://bit.ly/2WY01qz)\n
+-Overige vragen\n(https://bit.ly/2JVfeVz)\n
+-Klachten\n(https://bit.ly/2MbeoHg)\n
+    </string>
+    <string name="contact">
+        <a href="https://www.hogeschoolrotterdam.nl/hogeschool/contact/">Klik hier voor webcontact.</a>
+    </string>
 </resources>

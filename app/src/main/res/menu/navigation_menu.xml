@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/home"
         android:icon="@mipmap/baseline_home_black_24"
         android:title="Home" />
 
-    <item android:id="@+id/profiel"
-        android:icon="@mipmap/baseline_account_circle_black_24"
-        android:title="Profiel" />
-
     <item android:id="@+id/opendays"
         android:icon="@mipmap/baseline_calendar_today_black_24"
         android:title="Open dagen" />
-
 
     <item android:id="@+id/locatiez"
         android:icon="@mipmap/baseline_gps_fixed_black_24"
@@ -26,6 +22,7 @@
         android:icon="@mipmap/baseline_share_black_24"
         android:title="Share" />
 
-    <item android:id="@+id/buttonLogin"
-        android:title="Login" />
+    <item android:id="@+id/settings"
+        android:icon="@mipmap/baseline_settings_black_24"
+        android:title="Settings" />
 </menu>
