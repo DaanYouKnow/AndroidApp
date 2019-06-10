@@ -3,6 +3,7 @@ package com.example.opendagen;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.widget.ImageView;
 
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -24,6 +26,7 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
 
     private int min;
     private int max;
+    private ImageView PlattegrondZoom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,14 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infoactivity);
+
+        PlattegrondZoom = findViewById(R.id.imageView3);
+        PlattegrondZoom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPlattegrond();
+            }
+        });
 
 
         Button ButtonFacebook = (Button) findViewById(R.id.Facebook);
@@ -164,5 +175,9 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
                 break;
         }
         return true;
+    }
+    public void openPlattegrond() {
+        Intent intent = new Intent(this, ActivityPlattegrond.class);
+        startActivity(intent);
     }
 }
