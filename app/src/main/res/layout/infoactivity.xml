@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_weight="5"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/knipsel" />
+            app:srcCompat="@drawable/knipselworking" />
 
         <ScrollView
             android:id="@+id/scrollView2"
