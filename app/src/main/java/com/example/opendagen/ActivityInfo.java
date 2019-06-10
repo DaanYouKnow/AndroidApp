@@ -1,6 +1,8 @@
 package com.example.opendagen;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -12,17 +14,40 @@ import android.view.View;
 import android.widget.Button;
 import android.support.v7.app.ActionBarDrawerToggle;
 
+import java.util.Calendar;
+import java.util.TimeZone;
 
 
 public class ActivityInfo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
+    private int min;
+    private int max;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.HROTheme);
-        } else setTheme(R.style.AppTheme);
+        SharedPreferences sp = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE);
+        min = sp.getInt("MIN", 18);
+        max = sp.getInt("MAX", 6);
+
+        Calendar calender = Calendar.getInstance();
+        calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
+
+        if(min == 0 || max == 0) {
+            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+                setTheme(R.style.HROTheme);
+            } else {
+                setTheme(R.style.AppTheme);
+            }
+        }
+        else {
+            if (calender.get(calender.HOUR_OF_DAY) > min || calender.get(calender.HOUR_OF_DAY) < max /*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
+                setTheme(R.style.HROTheme);
+            } else {
+                setTheme(R.style.AppTheme);
+            }
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infoactivity);
@@ -133,15 +158,11 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
                 Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent2);
                 break;
-            case (R.id.switch2):
-                Intent intent3 = new Intent(getApplicationContext(), SwitchInDrawer.class);
-                startActivity(intent3);
+            case(R.id.settings):
+                Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent7);
                 break;
-
-
         }
         return true;
     }
 }
-
-

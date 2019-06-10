@@ -1,6 +1,8 @@
 package com.example.opendagen;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -10,8 +12,10 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Switch;
+
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -21,63 +25,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonAgenda;
     private Button buttonSocialMedia;
     private Button buttonShare;
+    private Button buttonSettings;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    private Switch modeswitch;
-    private Switch TESTSWITCH;
-    public Boolean yeehaw = false;
+
+    private int min;
+    private int max;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sp = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE);
+        min = sp.getInt("MIN", 18);
+        max = sp.getInt("MAX", 6);
 
-        //Dark mode --> HRO mode knop 1/2
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.HROTheme);
+        Calendar calender = Calendar.getInstance();
+        calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
+
+        if(min == 0 || max == 0) {
+            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+                setTheme(R.style.HROTheme);
+            } else {
+                setTheme(R.style.AppTheme);
+            }
         }
-        else setTheme(R.style.AppTheme);
-        // einde dark mode switch 1/2
+        else {
+            if (calender.get(calender.HOUR_OF_DAY) > min || calender.get(calender.HOUR_OF_DAY) < max /*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
+                setTheme(R.style.HROTheme);
+            } else {
+                setTheme(R.style.AppTheme);
+            }
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Dark mode switch 2/2
-        TESTSWITCH=findViewById(R.id.TestSwitch);
-        TESTSWITCH.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    yeehaw = true;
-                    modeswitch.setChecked(false);
-                }
-            }
-        });
-        modeswitch=findViewById(R.id.switch2);
-        if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            modeswitch.setChecked(true);
-        }
-        modeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(yeehaw){
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    recreate();
-                }
-                else
-                    if(isChecked){
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    recreate();
-                    }
-
-                    else {
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                        recreate();
-                    }
-                }
-
-        });
-
-        // einde dark mode switch 2/2
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -88,13 +69,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nv1);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
-
-
-
-
 
         //knop om naar Open Dagen te gaan.
         buttonOpenDagen = (Button) findViewById(R.id.buttonOpenDagen);
@@ -134,7 +108,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(Intent.createChooser(myIntent, "Share your excitement!"));
             }
         });
-
+        //knop om naar Settings te gaan.
+        buttonSettings = (Button) findViewById(R.id.buttonSettings);
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSettings();
+            }
+        });
     }
 
     public void openOpenDagen() {
@@ -154,7 +135,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent5 = new Intent(this, ActivityInfo.class);
         startActivity(intent5);
     }
-
+    public void openSettings() {
+        Intent intent7  = new Intent(this, SettingsActivity.class);
+        startActivity(intent7);
+    }
 
 
     @Override
@@ -195,8 +179,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent2);
                 break;
-
-
+            case(R.id.settings):
+                Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent7);
+                break;
 
         }
         return true;
