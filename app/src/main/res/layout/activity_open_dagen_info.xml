@@ -10,9 +10,7 @@
 
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?attr/backgroundColor"
@@ -76,6 +74,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
                     android:layout_weight="1"
+                    android:lineSpacingMultiplier="1.2"
                     android:text="Text"
                     android:textColor="?attr/textColor"
                     android:textSize="24sp" />
@@ -85,73 +84,96 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
 
-            android:layout_marginRight="20dp"
-            android:layout_weight="9"
+            android:layout_weight="12"
             android:orientation="horizontal">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
 
             <Button
                 android:id="@+id/textwebsite"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
-                android:layout_weight="1"
+                android:layout_weight="5"
                 android:background="@mipmap/baseline_how_to_reg_black_24"
+                android:bufferType="spannable"
                 android:textColor="#0000FF"
+                android:backgroundTint="@color/backgroundColorIcon"
                 android:textSize="14sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
             <Button
                 android:id="@+id/buttonShare"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-
+                android:layout_weight="5"
+                android:backgroundTint="@color/backgroundColorIcon"
                 android:background="@mipmap/baseline_share_black_24"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
             <Button
                 android:id="@+id/buttonAgenda"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
-                android:layout_weight="1"
+                android:backgroundTint="@color/backgroundColorIcon"
+                android:layout_weight="5"
                 android:background="@mipmap/baseline_calendar_today_black_24"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
             <Button
                 android:id="@+id/buttonLocatie"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
-                android:layout_weight="1"
+                android:layout_weight="5"
                 android:background="@mipmap/baseline_gps_fixed_black_24"
-
+                android:backgroundTint="@color/backgroundColorIcon"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
         </LinearLayout>
 
     </LinearLayout>
