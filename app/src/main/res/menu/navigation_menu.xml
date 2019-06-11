@@ -15,8 +15,8 @@
         android:title="Locatie" />
 
     <item android:id="@+id/social"
-        android:icon="@mipmap/baseline_people_black_24"
-        android:title="Social Media" />
+        android:icon="@mipmap/baseline_info_black_24"
+        android:title="Info" />
 
     <item android:id="@+id/sharee"
         android:icon="@mipmap/baseline_share_black_24"
