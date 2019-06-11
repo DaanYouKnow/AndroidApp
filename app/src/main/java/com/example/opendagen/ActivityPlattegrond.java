@@ -3,33 +3,30 @@ package com.example.opendagen;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
-import android.net.Uri;
-import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.widget.ImageView;
 
 import java.util.Calendar;
 import java.util.TimeZone;
 
-
-public class ActivityInfo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mToggle;
+public class ActivityPlattegrond extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private int min;
     private int max;
-    private ImageView PlattegrondZoom;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
 
+    private ImageView Plattegrond;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         SharedPreferences sp = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE);
         min = sp.getInt("MIN", 18);
         max = sp.getInt("MAX", 6);
@@ -53,73 +50,9 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
         }
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.infoactivity);
+        setContentView(R.layout.activity_plattegrond);
 
-        PlattegrondZoom = findViewById(R.id.imageView3);
-        PlattegrondZoom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPlattegrond();
-            }
-        });
-
-
-        Button ButtonFacebook = (Button) findViewById(R.id.Facebook);
-        ButtonFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Facebook = "https://www.facebook.com/hogeschoolrotterdam/";
-                Uri webadress = Uri.parse(Facebook);
-
-                Intent gotoFacebook = new Intent(Intent.ACTION_VIEW, webadress);
-                if (gotoFacebook.resolveActivity(getPackageManager()) != null) {
-                    startActivity(gotoFacebook);
-                }
-            }
-        });
-
-
-        Button ButtonInstagram = (Button) findViewById(R.id.Instagram);
-        ButtonInstagram.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Insta = "https://www.instagram.com/hogeschoolrotterdam/";
-                Uri webadress = Uri.parse(Insta);
-
-                Intent gotoInstagram = new Intent(Intent.ACTION_VIEW, webadress);
-                if (gotoInstagram.resolveActivity(getPackageManager()) != null) {
-                    startActivity(gotoInstagram);
-                }
-            }
-        });
-
-        Button ButtonTwitter = (Button) findViewById(R.id.Twitter);
-        ButtonTwitter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Twitter = "https://twitter.com/hsrotterdam";
-                Uri webadress = Uri.parse(Twitter);
-
-                Intent gotoTwitter = new Intent(Intent.ACTION_VIEW, webadress);
-                if (gotoTwitter.resolveActivity(getPackageManager()) != null) {
-                    startActivity(gotoTwitter);
-                }
-            }
-        });
-        Button ButtonWebsite = (Button) findViewById(R.id.Website);
-        ButtonWebsite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Website = "https://www.hogeschoolrotterdam.nl/";
-                Uri webadress = Uri.parse(Website);
-
-                Intent gotoWebsite = new Intent(Intent.ACTION_VIEW, webadress);
-                if (gotoWebsite.resolveActivity(getPackageManager()) != null) {
-                    startActivity(gotoWebsite);
-                }
-            }
-        });
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        mDrawerLayout = findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
         mDrawerLayout.addDrawerListener(mToggle);
@@ -129,12 +62,23 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nv1);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Plattegrond = findViewById(R.id.imageViewPlattegrond);
+        Plattegrond.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openInfo();
+            }
+        });
+    }
+    public void openInfo() {
+        Intent intent = new Intent(this, ActivityInfo.class);
+        startActivity(intent);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (mToggle.onOptionsItemSelected(item)) {
+        if(mToggle.onOptionsItemSelected(item)){
             return true;
         }
 
@@ -173,11 +117,8 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
                 Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent7);
                 break;
+
         }
         return true;
-    }
-    public void openPlattegrond() {
-        Intent intent = new Intent(this, ActivityPlattegrond.class);
-        startActivity(intent);
     }
 }
