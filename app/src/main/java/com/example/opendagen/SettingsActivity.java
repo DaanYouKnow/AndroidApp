@@ -35,30 +35,32 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
     private TextView max_out1;
     private int min;
     private int max;
+    private boolean switchOnOff;
 
     public static final String USER_PREF = "USER_PREF";
     public static final Integer MIN = 18;
     public static final Integer MAX = 6;
+    public static final String MODESWITCH = "MODESWITCH";
     SharedPreferences sp;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         min = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE).getInt("MIN", 18);
         max = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE).getInt("MAX", 6);
+        switchOnOff = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE).getBoolean(MODESWITCH, false);
 
         Calendar calender = Calendar.getInstance();
         calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
 
         if(min == 0 || max == 0) {
-            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            if (switchOnOff) {
                 setTheme(R.style.HROTheme);
             } else {
                 setTheme(R.style.AppTheme);
             }
         }
         else {
-            if (calender.get(calender.HOUR_OF_DAY) > min || calender.get(calender.HOUR_OF_DAY) < max /*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
+            if (calender.get(calender.HOUR_OF_DAY) >= min || calender.get(calender.HOUR_OF_DAY) <= max /*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
                 setTheme(R.style.HROTheme);
             } else {
                 setTheme(R.style.AppTheme);
@@ -78,8 +80,8 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
         NavigationView navigationView = (NavigationView) findViewById(R.id.nv1);
         navigationView.setNavigationItemSelectedListener(this);
 
-        modeswitch=(Switch)findViewById(R.id.switch2);
-        if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
+        modeswitch= findViewById(R.id.switch2);
+        /*if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             modeswitch.setChecked(true);
         }
 
@@ -95,7 +97,7 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
                     recreate();
                 }
             }
-        });
+        }); */
 
         min_out1 = (TextView) findViewById(R.id.min_out1);
         max_out1 = (TextView) findViewById(R.id.max_out1);
@@ -130,6 +132,17 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
                 openMain();
             }
         });
+
+        modeswitch.setChecked(switchOnOff);
+        modeswitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean(MODESWITCH, modeswitch.isChecked());
+                editor.apply();
+                recreate();
+            }
+        });
     }
 
     public void saveData() {
@@ -139,6 +152,7 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
         SharedPreferences.Editor editor = sp.edit();
         editor.putInt("MIN", min_output);
         editor.putInt("MAX", max_output);
+        editor.putBoolean(MODESWITCH, modeswitch.isChecked());
         editor.apply();
 
         recreate();
@@ -155,6 +169,7 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
             max_out1.setText(String.valueOf(sp.getInt("MAX", 0)));
         }
     }
+
 
     public void openMain() {
         Intent intent1 = new Intent(this, MainActivity.class);
