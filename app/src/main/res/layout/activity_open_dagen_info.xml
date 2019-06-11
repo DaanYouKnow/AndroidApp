@@ -96,6 +96,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
                 android:text="Inschrijven"
+                android:drawable="@drawable/writing"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
@@ -111,6 +112,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
                 android:text="Share!"
+                android:drawable="@drawable/share"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
             <Button
@@ -125,6 +127,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
                 android:text="Agenda"
+                android:drawable="@drawable/notebook"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
@@ -140,6 +143,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
                 android:text="Locatie"
+                android:drawable="@drawable/location"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
         </LinearLayout>
