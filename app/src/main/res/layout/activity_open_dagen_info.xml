@@ -95,7 +95,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:text="Inschrijven"
+                android:background="@mipmap/baseline_how_to_reg_black_24"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
@@ -110,9 +110,11 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:text="Share!"
+
+                android:background="@mipmap/baseline_share_black_24"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
+
             <Button
                 android:id="@+id/buttonAgenda"
                 android:layout_width="match_parent"
@@ -124,7 +126,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:text="Agenda"
+                android:background="@mipmap/baseline_calendar_today_black_24"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
@@ -139,7 +141,8 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:text="Locatie"
+                android:background="@mipmap/baseline_gps_fixed_black_24"
+
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -152,8 +155,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/navigation_menu"
-        android:fitsSystemWindows="true">
-    </android.support.design.widget.NavigationView>
+        android:background="@color/colorAccent"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/navigation_menu"></android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>
