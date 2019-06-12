@@ -131,14 +131,6 @@ public class ActivityOpenDagenLijst extends AppCompatActivity implements Navigat
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case (R.id.opendays):
-                Intent intent1 = new Intent(getApplicationContext(), ActivityOpenDagenLijst.class);
-                startActivity(intent1);
-                break;
-            case (R.id.social):
-                Intent intent5 = new Intent(getApplicationContext(), ActivityInfo.class);
-                startActivity(intent5);
-                break;
             case (R.id.locatiez):
                 Intent intent4 = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(intent4);
@@ -161,6 +153,10 @@ public class ActivityOpenDagenLijst extends AppCompatActivity implements Navigat
                 startActivity(intent7);
                 break;
 
+            case(R.id.info):
+                Intent intent8 = new Intent(getApplicationContext(), ActivityInfo.class);
+                startActivity(intent8);
+                break;
         }
         return true;
     }

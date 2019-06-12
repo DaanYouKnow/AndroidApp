@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:text="?attr/textColor">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/home"
-        android:textColor="?attr/textColor"
         android:icon="@mipmap/baseline_home_black_24"
         android:title="Home" />
 
     <item android:id="@+id/opendays"
-        android:textColor="?attr/textColor"
         android:icon="@mipmap/baseline_calendar_today_black_24"
         android:title="Open dagen" />
 
     <item android:id="@+id/locatiez"
-        android:textColor="?attr/textColor"
         android:icon="@mipmap/baseline_gps_fixed_black_24"
         android:title="Locatie" />
 
-    <item android:id="@+id/social"
-        android:textColor="?attr/textColor"
+    <item android:id="@+id/info"
         android:icon="@mipmap/baseline_info_black_24"
         android:title="Info" />
 
     <item android:id="@+id/sharee"
-        android:textColor="?attr/textColor"
         android:icon="@mipmap/baseline_share_black_24"
         android:title="Share" />
 
     <item android:id="@+id/settings"
-        android:textColor="?attr/textColor"
         android:icon="@mipmap/baseline_settings_black_24"
         android:title="Settings" />
 </menu>

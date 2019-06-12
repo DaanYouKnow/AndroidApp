@@ -216,10 +216,6 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
                 Intent intent1 = new Intent(getApplicationContext(), ActivityOpenDagenLijst.class);
                 startActivity(intent1);
                 break;
-            case (R.id.social):
-                Intent intent5 = new Intent(getApplicationContext(), ActivityInfo.class);
-                startActivity(intent5);
-                break;
             case (R.id.locatiez):
                 Intent intent4 = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(intent4);
@@ -237,9 +233,9 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
                 Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent2);
                 break;
-            case(R.id.settings):
-                Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
-                startActivity(intent7);
+            case(R.id.info):
+                Intent intent8 = new Intent(getApplicationContext(), ActivityInfo.class);
+                startActivity(intent8);
                 break;
 
         }
