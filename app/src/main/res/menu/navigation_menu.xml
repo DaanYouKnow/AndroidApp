@@ -10,15 +10,11 @@
         android:icon="@mipmap/baseline_calendar_today_black_24"
         android:title="Open dagen" />
 
-    <item android:id="@+id/info"
-        android:icon="@mipmap/baseline_info_black_24dp"
-        android:title="Info" />
-
     <item android:id="@+id/locatiez"
         android:icon="@mipmap/baseline_gps_fixed_black_24"
         android:title="Locatie" />
 
-    <item android:id="@+id/social"
+    <item android:id="@+id/info"
         android:icon="@mipmap/baseline_info_black_24"
         android:title="Info" />
 

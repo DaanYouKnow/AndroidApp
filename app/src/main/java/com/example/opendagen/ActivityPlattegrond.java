@@ -95,7 +95,7 @@ public class ActivityPlattegrond extends AppCompatActivity implements Navigation
                 Intent intent1 = new Intent(getApplicationContext(), ActivityOpenDagenLijst.class);
                 startActivity(intent1);
                 break;
-            case (R.id.social):
+            case (R.id.info):
                 Intent intent5 = new Intent(getApplicationContext(), ActivityInfo.class);
                 startActivity(intent5);
                 break;
