@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.widget.ImageView;
 
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -25,6 +26,7 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
     private int min;
     private int max;
     private boolean switchOnOff;
+    private ImageView Plattegrond;
 
     SharedPreferences sp;
 
@@ -56,6 +58,13 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infoactivity);
 
+        Plattegrond = findViewById(R.id.imageView3);
+        Plattegrond.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPlattegrond();
+            }
+        });
 
         Button ButtonFacebook = (Button) findViewById(R.id.Facebook);
         ButtonFacebook.setOnClickListener(new View.OnClickListener() {
@@ -165,5 +174,10 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
                 break;
         }
         return true;
+    }
+
+    public void openPlattegrond() {
+        Intent intent = new Intent(this, ActivityPlattegrond.class);
+        startActivity(intent);
     }
 }
