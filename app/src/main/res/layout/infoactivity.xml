@@ -57,6 +57,8 @@
                 android:text="@string/InfoText"
                 android:textColor="?attr/textColor"
                 android:textSize="20sp"
+                android:textStyle="italic"
+                android:lineSpacingMultiplier="1.2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
