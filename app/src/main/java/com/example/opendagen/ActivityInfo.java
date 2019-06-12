@@ -177,7 +177,7 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
                 Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent7);
                 break;
-        }
+    }
         return true;
     }
     public void openPlattegrond() {
