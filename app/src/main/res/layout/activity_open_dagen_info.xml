@@ -84,14 +84,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:layout_weight="12"
+            android:background="?attr/buttonColor"
+            android:layout_weight="9"
             android:orientation="horizontal">
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="6" />
 
             <Button
                 android:id="@+id/textwebsite"
@@ -107,13 +102,9 @@
                 android:background="@mipmap/baseline_how_to_reg_black_24"
                 android:bufferType="spannable"
                 android:textColor="#0000FF"
-                android:backgroundTint="@color/backgroundColorIcon"
+                android:backgroundTint="?attr/buttontextColor"
                 android:textSize="14sp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="6" />
             <Button
                 android:id="@+id/buttonShare"
                 android:layout_width="match_parent"
@@ -125,15 +116,11 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="5"
-                android:backgroundTint="@color/backgroundColorIcon"
+                android:backgroundTint="?attr/buttontextColor"
                 android:background="@mipmap/baseline_share_black_24"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="6" />
             <Button
                 android:id="@+id/buttonAgenda"
                 android:layout_width="match_parent"
@@ -144,16 +131,12 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
-                android:backgroundTint="@color/backgroundColorIcon"
+                android:backgroundTint="?attr/buttontextColor"
                 android:layout_weight="5"
                 android:background="@mipmap/baseline_calendar_today_black_24"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="6" />
             <Button
                 android:id="@+id/buttonLocatie"
                 android:layout_width="match_parent"
@@ -166,14 +149,10 @@
                 android:layout_marginBottom="8dp"
                 android:layout_weight="5"
                 android:background="@mipmap/baseline_gps_fixed_black_24"
-                android:backgroundTint="@color/backgroundColorIcon"
+                android:backgroundTint="?attr/buttontextColor"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="6" />
         </LinearLayout>
 
     </LinearLayout>
