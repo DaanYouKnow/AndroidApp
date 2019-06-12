@@ -26,6 +26,7 @@
         <item name="textColor">#FFFFFF</item>
         <item name="buttonColor">#222222</item>
         <item name="buttontextColor">#FFFFFF</item>
+
     </style>
 
 </resources>

@@ -10,9 +10,7 @@
 
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?attr/backgroundColor"
@@ -28,7 +26,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView"
@@ -42,8 +42,10 @@
                     android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:text="Datum"
+                    android:textAllCaps="false"
                     android:textColor="?attr/textColor"
-                    android:textSize="24sp" />
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -58,7 +60,8 @@
                     android:layout_weight="1"
                     android:text="Info"
                     android:textColor="?attr/textColor"
-                    android:textSize="24sp" />
+                    android:textSize="30sp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/textView4"
@@ -71,6 +74,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
                     android:layout_weight="1"
+                    android:lineSpacingMultiplier="1.2"
                     android:text="Text"
                     android:textColor="?attr/textColor"
                     android:textSize="24sp" />
@@ -80,68 +84,96 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="8"
 
+            android:layout_weight="12"
             android:orientation="horizontal">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
 
             <Button
                 android:id="@+id/textwebsite"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-                android:text="Inschrijven"
+                android:layout_weight="5"
+                android:background="@mipmap/baseline_how_to_reg_black_24"
+                android:bufferType="spannable"
                 android:textColor="#0000FF"
+                android:backgroundTint="@color/backgroundColorIcon"
                 android:textSize="14sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
             <Button
                 android:id="@+id/buttonShare"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-                android:text="Share!"
+                android:layout_weight="5"
+                android:backgroundTint="@color/backgroundColorIcon"
+                android:background="@mipmap/baseline_share_black_24"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
             <Button
                 android:id="@+id/buttonAgenda"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-                android:text="Agenda"
+                android:backgroundTint="@color/backgroundColorIcon"
+                android:layout_weight="5"
+                android:background="@mipmap/baseline_calendar_today_black_24"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
             <Button
                 android:id="@+id/buttonLocatie"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-                android:text="Locatie"
+                android:layout_weight="5"
+                android:background="@mipmap/baseline_gps_fixed_black_24"
+                android:backgroundTint="@color/backgroundColorIcon"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
         </LinearLayout>
 
     </LinearLayout>
@@ -152,8 +184,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/navigation_menu"
-        android:fitsSystemWindows="true">
-    </android.support.design.widget.NavigationView>
+        android:background="@color/colorAccent"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/navigation_menu"></android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

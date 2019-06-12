@@ -31,13 +31,16 @@ public class ActivityOpenDagenInfo extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_dagen_info);
-        Button btn = (Button) findViewById(R.id.textwebsite);
         TextView Tv = (TextView) findViewById(R.id.textView);
         Tv.setText(getIntent().getStringExtra("Datum"));
         TextView Tv2 = (TextView) findViewById(R.id.textView2);
         Tv2.setText(getIntent().getStringExtra("Info"));
         TextView Tv3 = (TextView) findViewById(R.id.textView4);
         Resources res = getResources();
+        Button buttonLocatie = (Button) findViewById(R.id.buttonLocatie);
+        Button buttonShare = (Button) findViewById(R.id.buttonShare);
+        Button buttonAgenda = (Button) findViewById(R.id.buttonAgenda);
+        Button btn = (Button) findViewById(R.id.textwebsite);
         Tv3.setText(res.getString(R.string.kankertext));
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +52,7 @@ public class ActivityOpenDagenInfo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button buttonLocatie = (Button) findViewById(R.id.buttonLocatie);
+
         buttonLocatie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +60,7 @@ public class ActivityOpenDagenInfo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button buttonShare = (Button) findViewById(R.id.buttonShare);
+
         buttonShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +73,7 @@ public class ActivityOpenDagenInfo extends AppCompatActivity {
                 startActivity(Intent.createChooser(myIntent, "Share your excitement!"));
             }
         });
-        Button buttonAgenda = (Button) findViewById(R.id.buttonAgenda);
+
         buttonAgenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
