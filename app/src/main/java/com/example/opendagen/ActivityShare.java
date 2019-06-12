@@ -19,7 +19,7 @@ public class ActivityShare extends AppCompatActivity {
                 Intent myIntent = new Intent(Intent.ACTION_SEND);
                 myIntent.setType("text/plain");
                 String ShareSub = "Ik ga naar hogeschool Rotterdam!\n";
-                String ShareBody = "ik ga binnenkort naar opendag informatica bij HogeSchool Rotterdam! \nik heb er nu al zin in!";
+                String ShareBody = "ik ga binnenkort naar opendag informatica bij Hogeschool Rotterdam! \nik heb er nu al zin in!";
                 myIntent.putExtra(Intent.EXTRA_SUBJECT,ShareSub);
                 myIntent.putExtra(Intent.EXTRA_TEXT,ShareBody);
                 startActivity(Intent.createChooser(myIntent, "Share your excitement!"));
