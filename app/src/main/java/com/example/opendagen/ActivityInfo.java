@@ -3,7 +3,6 @@ package com.example.opendagen;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -14,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.widget.ImageView;
 
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -26,30 +24,25 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
 
     private int min;
     private int max;
-    private boolean switchOnOff;
-    private ImageView PlattegrondZoom;
-
-    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        sp = getSharedPreferences("USER_PREF",Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("USER_PREF", Context.MODE_PRIVATE);
         min = sp.getInt("MIN", 18);
         max = sp.getInt("MAX", 6);
-        switchOnOff = sp.getBoolean("MODESWITCH", false);
 
         Calendar calender = Calendar.getInstance();
         calender.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
 
         if(min == 0 || max == 0) {
-            if (switchOnOff) {
+            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
                 setTheme(R.style.HROTheme);
             } else {
                 setTheme(R.style.AppTheme);
             }
         }
         else {
-            if (calender.get(calender.HOUR_OF_DAY) >= min || calender.get(calender.HOUR_OF_DAY) <= max) {
+            if (calender.get(calender.HOUR_OF_DAY) > min || calender.get(calender.HOUR_OF_DAY) < max /*AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM*/) {
                 setTheme(R.style.HROTheme);
             } else {
                 setTheme(R.style.AppTheme);
@@ -58,14 +51,6 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infoactivity);
-
-        PlattegrondZoom = findViewById(R.id.imageView3);
-        PlattegrondZoom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPlattegrond();
-            }
-        });
 
 
         Button ButtonFacebook = (Button) findViewById(R.id.Facebook);
@@ -177,11 +162,7 @@ public class ActivityInfo extends AppCompatActivity implements NavigationView.On
                 Intent intent7  = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent7);
                 break;
-    }
+        }
         return true;
-    }
-    public void openPlattegrond() {
-        Intent intent = new Intent(this, ActivityPlattegrond.class);
-        startActivity(intent);
     }
 }
