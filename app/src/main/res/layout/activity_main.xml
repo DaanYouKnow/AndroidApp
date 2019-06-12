@@ -105,6 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="?attr/backgroundColor"
         app:menu="@menu/navigation_menu"
         android:fitsSystemWindows="true">
     </android.support.design.widget.NavigationView>
