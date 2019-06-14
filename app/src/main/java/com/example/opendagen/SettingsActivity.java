@@ -81,23 +81,6 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
         navigationView.setNavigationItemSelectedListener(this);
 
         modeswitch= findViewById(R.id.switch2);
-        /*if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            modeswitch.setChecked(true);
-        }
-
-        modeswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    recreate();
-                }
-                else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    recreate();
-                }
-            }
-        }); */
 
         min_out1 = (TextView) findViewById(R.id.min_out1);
         max_out1 = (TextView) findViewById(R.id.max_out1);
@@ -146,6 +129,10 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
     }
 
     public void saveData() {
+        if (min_input.getText().toString().matches("") || max_input.getText().toString().matches("")) {
+            Toast.makeText(this, "Vul aub twee waarden in", Toast.LENGTH_SHORT).show();
+        }
+        else {
         int min_output = Integer.valueOf(min_input.getText().toString());
         int max_output = Integer.valueOf(max_input.getText().toString());
 
@@ -158,6 +145,7 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
         recreate();
 
         Toast.makeText(this, "Opgeslagen", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void apply() {
