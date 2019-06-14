@@ -84,8 +84,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="6"
             android:background="?attr/buttonColor"
-            android:layout_weight="9"
             android:orientation="horizontal">
 
             <Button
@@ -100,9 +100,9 @@
                 android:layout_marginBottom="8dp"
                 android:layout_weight="5"
                 android:background="@mipmap/baseline_how_to_reg_black_24"
+                android:backgroundTint="?attr/buttontextColor"
                 android:bufferType="spannable"
                 android:textColor="#0000FF"
-                android:backgroundTint="?attr/buttontextColor"
                 android:textSize="14sp" />
 
             <Button
@@ -116,8 +116,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="5"
-                android:backgroundTint="?attr/buttontextColor"
                 android:background="@mipmap/baseline_share_black_24"
+                android:backgroundTint="?attr/buttontextColor"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
@@ -131,9 +131,9 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
-                android:backgroundTint="?attr/buttontextColor"
                 android:layout_weight="5"
                 android:background="@mipmap/baseline_calendar_today_black_24"
+                android:backgroundTint="?attr/buttontextColor"
                 android:textColor="#0000FF"
                 android:textSize="14sp" />
 
