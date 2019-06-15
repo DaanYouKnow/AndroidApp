@@ -8,6 +8,9 @@
         <item>•	26 of 27 maart 2019</item>
         <item>• 4 april 2019</item>
         <item>• 4 juni 2019</item>
+        <item>• 1 februari 2020</item>
+        <item>• 28 maart 2020</item>
+        <item>• 3 juni 2020</item>
     </string-array>
     <string-array name="Info">
         <item>Proefstuderen, Inschrijving gesloten</item>
@@ -15,6 +18,9 @@
         <item>Proefstuderen, Inschrijving gesloten</item>
         <item>Proefstuderen, Inschrijving gesloten</item>
         <item>Proefstuderen, Inschrijving open</item>
+        <item>Open Dag, inschrijving open</item>
+        <item>Open Dag, inschrijving open</item>
+        <item>Open Dag, inschrijving open</item>
         <item>Open Dag, inschrijving open</item>
         <item>Open Dag, inschrijving open</item>
     </string-array>
