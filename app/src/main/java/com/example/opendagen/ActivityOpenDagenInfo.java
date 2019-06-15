@@ -11,14 +11,12 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.support.v7.app.AppCompatDelegate;
-import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.opendagen.R;
+
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -80,7 +78,7 @@ public class ActivityOpenDagenInfo extends AppCompatActivity implements Navigati
         Tv2.setText(getIntent().getStringExtra("Info"));
         TextView Tv3 = (TextView) findViewById(R.id.textView4);
         Resources res = getResources();
-        Tv3.setText(res.getString(R.string.kankertext));
+        Tv3.setText(res.getText(R.string.verwachttext));
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -162,7 +160,7 @@ public class ActivityOpenDagenInfo extends AppCompatActivity implements Navigati
                 }
                 int yer = Calendar.getInstance().get(Calendar.YEAR);
                 if(Smon.toLowerCase().contains("2018")) {
-                yer = 2018;
+                    yer = 2018;
                 }
                 if(Smon.toLowerCase().contains("2019")) {
                     yer = 2019;
